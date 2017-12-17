@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body id="body">
+    <script>
+        $(document).ready(function(){
+            var bpm = 100;
+            var timeBetweenBeats = 60/bpm;
+            var time = 0;
+            var buttonTimes = [];
+            var startTime;
+            $( "#body" ).keydown(function( event ) {
+            if(event.which == 65){
+                    startTime = time;
+                }
+            console.log(time-startTime);
+            currentTime = time.toFixed(3);
+            buttonTimes.push(currentTime);
+            $("#output").text(buttonTimes);
+            });
+                $("#sound").hide();
+                $("#buttonPlay").click(function(){
+                    $("#sound").show();
+                    time = 0;
+                    var timer = setInterval(function(){
+                time += .001;
+            $("#message").text(time.toFixed(3));
+            }
+                , 1);
+                 });
+                    
+                });
+                </script>
+    <div id="sound">
+        Hi
+    <audio autoplay>
+ <!--       <source src="Met.mp3" type="audio/mpeg"> -->
+        </audio>
+    </div>
+    <div id="buttonPlay">
+        <button id="playButton">Play</button>
+    </div>
+    <div id="output">
+
+    </div>
+    <div id="message">
+        hi
+    </div>
+    <script>
+    </script>
+</body>
+<script>
+     
+</script>
+</html>
